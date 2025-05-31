@@ -26,7 +26,10 @@ def genereer_demo_cases():
 col1, col2, col3 = st.columns([6, 1, 2])
 
 with col3:
-    st.image("logo_kleur.png", width=300)
+    if os.path.exists("logo_kleur.png"):
+        st.image("logo_kleur.png", width=300)
+    else:
+        st.warning("Logo kon niet worden geladen.")
 
 toon_demo = st.checkbox("Toon demo-cases", value=True)
 
